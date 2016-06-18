@@ -89,6 +89,7 @@
             android:layout_weight="8.8"
             android:hint="phone number"
             android:inputType="number"
+            android:maxLength="9"
             android:textColorHint="@color/colorPrimary"/>
     </LinearLayout>
 
