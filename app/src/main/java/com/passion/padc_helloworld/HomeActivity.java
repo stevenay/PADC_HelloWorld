@@ -47,7 +47,7 @@ public class HomeActivity extends AppCompatActivity {
 
                 @Override
                 public void onClick(View v) {
-                    LoginFragment fragment = new LoginFragment();
+                    LoginFragment fragment = LoginFragment.newInstance("dummy default");
                     getSupportFragmentManager()
                             .beginTransaction()
                             .replace(R.id.fl_container, fragment)

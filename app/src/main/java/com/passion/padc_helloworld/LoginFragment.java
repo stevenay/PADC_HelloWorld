@@ -1,6 +1,7 @@
 package com.passion.padc_helloworld;
 
 import android.content.Intent;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -14,7 +15,29 @@ import android.widget.EditText;
  */
 public class LoginFragment extends Fragment {
 
+    public static final String BARG_DUMMY_USERNAME = "dummy_username";
+    private String defaultUsername;
+
     public LoginFragment() {
+    }
+
+    public static LoginFragment newInstance(String defaultUsername)
+    {
+        LoginFragment fragment = new LoginFragment();
+        Bundle bundle = new Bundle();
+        bundle.putString(LoginFragment.BARG_DUMMY_USERNAME, defaultUsername);
+        fragment.setArguments(bundle);
+
+        return fragment;
+    }
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        Bundle bundle = getArguments();
+        if (bundle != null) {
+            defaultUsername = bundle.getString(LoginFragment.BARG_DUMMY_USERNAME);
+        }
     }
 
     @Override
@@ -23,6 +46,8 @@ public class LoginFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_login, container, false);
 
         final EditText etUsername  = (EditText) view.findViewById(R.id.et_username);
+        etUsername.setText(defaultUsername);
+
         final EditText etPassword  = (EditText) view.findViewById(R.id.et_password);
 
         Button btnLogin = (Button) view.findViewById(R.id.btn_login);
