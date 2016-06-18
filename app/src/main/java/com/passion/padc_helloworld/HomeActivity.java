@@ -10,8 +10,9 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
+import android.widget.Toast;
 
-public class HomeActivity extends AppCompatActivity {
+public class HomeActivity extends AppCompatActivity implements ViewFragment.ControllerView {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -134,5 +135,15 @@ public class HomeActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onLoginPerform() {
+        Toast.makeText(HomeActivity.this, "loginPerform", Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void onRegisterPerform() {
+        Toast.makeText(HomeActivity.this, "registerPerform", Toast.LENGTH_SHORT).show();
     }
 }

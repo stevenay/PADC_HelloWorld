@@ -56,7 +56,6 @@ public class LoginFragment extends Fragment {
             public void onClick(View v) {
                 String username = etUsername.getText().toString();
                 String password = etPassword.getText().toString();
-
                 // Toast.makeText(getContext(), "Hello Login Form : " + username + " - " + password, Toast.LENGTH_SHORT).show();
 
                 Intent intentToLoginSummary = LoginSummaryActivity.newIntent(username);
