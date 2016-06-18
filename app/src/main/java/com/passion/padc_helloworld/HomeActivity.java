@@ -35,11 +35,18 @@ public class HomeActivity extends AppCompatActivity implements ViewFragment.Cont
                 }
             });
 
-//      LoginFragment fragment = new LoginFragment();
-        RegisterFragment fragment = new RegisterFragment();
+        if (findViewById(R.id.fl_container_2) != null) {
+            RegisterFragment fragment = new RegisterFragment();
+            getSupportFragmentManager()
+                    .beginTransaction()
+                    .replace(R.id.fl_container_2, fragment)
+                    .commit();
+        }
+
+        LoginFragment loginFragment = new LoginFragment();
         getSupportFragmentManager()
                 .beginTransaction()
-                .replace(R.id.fl_container, fragment)
+                .replace(R.id.fl_container, loginFragment)
                 .commit();
 
         Button btnLogin = (Button) this.findViewById(R.id.btn_login);
