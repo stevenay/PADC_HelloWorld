@@ -27,7 +27,7 @@ public class RegistrationSummaryActivity extends AppCompatActivity {
         String summary = "Username: " + userParcel.getUsername() + "\n";
         summary += "Password: " + userParcel.getPassword() + "\n";
         summary += "Email: " + userParcel.getEmail() + "\n";
-        summary += "Phone: " + userParcel.getPhoneNumber() + "\n";
+        summary += "Phone: 09-" + userParcel.getPhoneNumber() + "\n";
         summary += "Country: " + userParcel.getCountry() + "\n";
         summary += "Gender: " + userParcel.getGender() + "\n";
 

@@ -48,15 +48,13 @@ public class RegisterFragment extends Fragment {
         final EditText etPhoneNumber = (EditText) view.findViewById(R.id.et_phonenumber);
         final RadioGroup rdgGender = (RadioGroup) view.findViewById(R.id.rdg_gender);
 
-// to add try_catch block
+        // to add try_catch block
         Button btnSubmit = (Button) view.findViewById(R.id.btn_submit);
         btnSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 int selectGenderId = rdgGender.getCheckedRadioButtonId();
                 RadioButton rdbGender = (RadioButton) rdgGender.findViewById(selectGenderId);
-
                 String gender = (rdbGender != null) ? rdbGender.getText().toString() : "others";
 
                 UserParcel userParcel = new UserParcel(
